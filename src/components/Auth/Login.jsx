@@ -7,6 +7,8 @@ const Login = ({handleLogin, data}) => {
 
   const [employees, setEmployees] = useState(null);
   const [admin, setAdmin] = useState(null);
+  
+  const [text, setText] = useState("Don't Click Here")
 
   useEffect(() => {
     if(data){
@@ -25,7 +27,8 @@ const Login = ({handleLogin, data}) => {
   }
 
   return (
-    <div className='w-screen h-max md:h-screen flex flex-col items-center'>
+    <div className='w-screen h-max md:h-screen flex flex-col items-center pb-4 pt-8'>
+      <p>This is a simple react app which I've created to showcase my ability to work on the frontend, this app is an Employee Management System which uses the local storage instead of any backend.</p>
       <div className='w-full h-full md:h-[90%] flex flex-col md:flex-row justify-center items-center gap-4 p-4'>
         <div className='w-full md:w-1/2 flex flex-col items-center justify-center gap-4'>
           <div className='w-full bg-[hsl(0,0%,20%)] p-4 rounded'>
@@ -108,7 +111,13 @@ const Login = ({handleLogin, data}) => {
         </form>
 
       </div>
-      <a className='p-2 bg-blue-600 rounded hover:bg-blue-700' target='/' href="https://www.fiverr.com/s/EgNLPwd">Click here to hire me on a freelance basis</a>
+      <a 
+      onClick={()=>{
+        setText("Now you know how to hire me 😊")
+      }}
+      className='p-2 bg-blue-600 rounded hover:bg-blue-700' 
+      target='_blank' 
+      href="https://www.fiverr.com/s/EgNLPwd">{text}</a>
     </div>
   )
 }

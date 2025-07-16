@@ -4,10 +4,12 @@ import EmployeeDashboard from "./components/Dashboard/EmployeeDashboard";
 import AdminDashboard from "./components/Dashboard/AdminDashboard";
 import { setLocalStorage, getLocalStorage } from "./utils/LocalStorage";
 import { AuthContext } from "./context/AuthProvider";
+import Trap from "./components/Trap";
 
 const App = () => {
   const contextData = useContext(AuthContext);
   var loggedInUser = JSON.parse(localStorage.getItem("loggedInUser"));
+  const [trap, setTrap] = useState(true);
 
   // if(!loggedInUser){
   //   loggedInUser = {role: "anonymous", data: null};
@@ -53,13 +55,16 @@ const App = () => {
 
   return (
     <>
-      {user === "user" ? (
+      {
+      trap ? <Trap setTrap={setTrap}/>
+      : user === "user" ? (
         <EmployeeDashboard currUser = {loggedInUser} setUser={setUser}/>
       ) : user === "admin" ? (
         <AdminDashboard currUser = {loggedInUser} setUser={setUser}/>
       ) : (
         <Login handleLogin={handleLogin} data={contextData}/>
-      )}
+      )
+      }
     </>
   );
 };
