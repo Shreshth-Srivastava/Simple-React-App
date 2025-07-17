@@ -22,6 +22,7 @@ const App = () => {
     if(contextData){
       setEmployeesData(contextData.employees);
       setAdminData(contextData.admin);
+      setTrap(JSON.parse(localStorage.getItem("trap")));
     }
   }, [contextData]);
 

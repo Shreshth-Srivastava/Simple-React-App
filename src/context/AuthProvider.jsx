@@ -23,6 +23,10 @@ const AuthProvider = ({children}) => {
       localStorage.setItem("loggedInUser", JSON.stringify(loggedInUser));
     }
 
+    if (!localStorage.getItem("trap")) {
+      localStorage.setItem("trap", true);
+    }
+
     const {employees, admin} = getLocalStorage();
     setUserData({employees, admin});
   }, [])
