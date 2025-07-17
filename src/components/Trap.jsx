@@ -10,7 +10,7 @@ const Trap = ({ setTrap }) => {
           Hmmmmmm... So you're one of those, huh? The "instructions are merely
           suggestions" type. Classic. 😏 Well, since you've boldly arrived here
           against all odds (and logic), go ahead—click that big green button to
-          launch a "totally simple React app.😄
+          launch a "totally simple" React app.😄
         </p>
         <div className="py-4 grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-4">
           <button
